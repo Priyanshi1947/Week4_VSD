@@ -1,4 +1,4 @@
-## sky130 CMOS Inverter Characterization Report 
+<img width="505" height="482" alt="image" src="https://github.com/user-attachments/assets/130ebb70-ab95-4147-8bf9-4679e258103e" />## sky130 CMOS Inverter Characterization Report 
 
 This report documents the characterization of a CMOS inverter using a SPICE simulator(ngspice), following the structure and experiments typical of the sky130 circuit design workflow. The analysis covers the static and transient behavior of the MOSFETs and the resulting inverter circuit.
 
@@ -6,21 +6,27 @@ This report documents the characterization of a CMOS inverter using a SPICE simu
     This characterization study consists of five main experiments, each designed to extract critical parameters for digital circuit design and static timing analysis (STA):
 
 
-    a.MOSFET IDS  vs VDS Characteristics: To observe the fundamental behavior of the NMOS transistor, specifically identifying the linear and saturation regions of operation, which are crucial for modeling the transistor's effective resistance and drive strength in a logic gate.
+    ## a.MOSFET IDS  vs VDS Characteristics:
+       To observe the fundamental behavior of the NMOS transistor, specifically identifying the linear and saturation regions of operation, which are crucial for modeling the transistor's effective resistance and drive strength in a logic gate.
 
 
-    b.Threshold Voltage (Vt) Extraction: To determine the Threshold Voltage (VT) of the NMOS transistor by plotting ID  vs VGS. VT defines the gate voltage required to turn the transistor ON, which directly impacts the switching characteristics of the inverter.
+    ## b.Threshold Voltage (Vt) Extraction:
+       To determine the Threshold Voltage (VT) of the NMOS transistor by plotting ID  vs VGS. VT defines the gate voltage required to turn the transistor ON, which directly impacts the switching characteristics of the inverter.
 
 
-    c.CMOS Inverter Voltage Transfer Characteristic (VTC): To plot the static behavior of the inverter, VOUT vs VIN. This plot is used to determine the key DC parameters: switching threshold VM, logic levels (VOL, VOH), and noise margins (NML, NML).
+    ## c.CMOS Inverter Voltage Transfer Characteristic (VTC):
+        To plot the static behavior of the inverter, VOUT vs VIN. This plot is used to determine the key DC parameters: switching threshold VM, logic levels (VOL, VOH), and noise margins (NML, NML).
 
 
-    d.Transient Behavior: Propagation Delays: To measure the dynamic speed of the inverter by applying a pulse input and extracting the rise and fall propagation delays. These delays are the fundamental for library characterization and STA.
+    ## d.Transient Behavior:
+       Propagation Delays: To measure the dynamic speed of the inverter by applying a pulse input and extracting the rise and fall propagation delays. These delays are the fundamental for library characterization and STA.
 
 
-    e.Variation Studies (Voltage and Device): To evaluate the robustness of the inverter's static characteristics against changes in supply voltage (VDD) and device sizing (W/L). This analysis is critical for understanding circuit reliability across process, voltage, and temperature (PVT) corners.
+    ## e.Variation Studies (Voltage and Device):
 
-2. **Spice Netlist**
+       To evaluate the robustness of the inverter's static characteristics against changes in supply voltage (VDD) and device sizing (W/L). This analysis is critical for understanding circuit reliability across process, voltage, and temperature (PVT) corners.
+
+3. **Spice Netlist**
 
    1.Resistive Load NMOS DC Analysis
       
@@ -243,7 +249,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 ## Experiment 1:
     The plot shows drain current Id vs. drain-source voltage Vds for multiple gate-source voltages Vgs.
 
-  ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+  ![]((https://github.com/Priyanshi1947/Week4_VSD/blob/main/image.png?raw=true))
     
     Observation: For a fixed Vgs, the current initially increases linearly with Vds (Linear Region) before flattening out (Saturation Region).
     Significance: The saturation region is where the transistor acts as a current source, and the linear region is where it acts as a resistor. The onset of saturation is near the knee of each curve.
@@ -252,7 +258,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 ## Experiment 2: 
     The plot shows drain current Id vs. gate-source voltage Vgs at a fixed high Vds .
 
-   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(1).png?raw=true)
    
     Annotation: The Threshold Voltage (Vt) is extracted by finding the Vgs point at which the current starts to rise significantly (or by linear extrapolation from the saturation region).
 
@@ -260,7 +266,9 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 ## Experiment 3: VTC (Voltage Transfer Characteristic)
     The VTC plots the output voltage Vout vs. input voltage Vin.
 
-   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(2).png?raw=true)
+
+   ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(4).png?raw=true)
    
     Annotation: The sharp transition demonstrates high gain. The Switching Threshold Vm is the point where Vin=Vout. Vm is observed to be around 0.9V for the given design.
 
@@ -271,7 +279,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
    
     The plot shows the input pulse (blue) and the resulting output transient (red).
 
-   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(3).png?raw=true)
    
     Annotation: Propagation delays are measured between the input and output Vdd/2 crossing points.
 
@@ -280,7 +288,9 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
    
     The plot shows VTC curves for different supply voltages Vdd.
 
-   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(4).png?raw=true)
+  
    
     Observation: As Vdd scales down, the VTC curve shifts to the left Vin and the overall voltage swing decreases.
 
@@ -288,13 +298,13 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
         
 4. **Tabulated results**
 
-    ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/Screenshot%202025-10-19%20222308.png?raw=true)
 
-    ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/Screenshot%202025-10-19%20222320.png?raw=true)
 
-    ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/Screenshot%202025-10-19%20222328.png?raw=true)
 
-    ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/Screenshot%202025-10-19%20222343.png?raw=true)
 
 
 5. **Observations/Analysis**
@@ -321,6 +331,7 @@ Vm is determined by the ratio of NMOS to PMOS currents, both of which are functi
 STA connection: $V_{DD}$ variation affects delay and noise margins. Lower $V_{DD}$ reduces power but increases delay ($\tau \propto C_L/I$) and decreases noise margins, which can lead to timing failures or unreliable operation.
 Device variations due to manufacturing processes (like etching variations) cause the VTC to shift, changing Vm and the noise margins .
 Process variations alter Vt and the effective W/L ratio. For instance, a stronger PMOS shifts the VTC to the left, resulting in a change in Vm.
+
 
 
 
