@@ -240,16 +240,16 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 3. **Plots and Figures**
 
    
-    ##Experiment 1:
+    ## Experiment 1:
     The plot shows drain current Id vs. drain-source voltage Vds for multiple gate-source voltages Vgs.
 
-   [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+  ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
     
     Observation: For a fixed Vgs, the current initially increases linearly with Vds (Linear Region) before flattening out (Saturation Region).
     Significance: The saturation region is where the transistor acts as a current source, and the linear region is where it acts as a resistor. The onset of saturation is near the knee of each curve.
 
    
-    ##Experiment 2: 
+    ## Experiment 2: 
     The plot shows drain current Id vs. gate-source voltage Vgs at a fixed high Vds .
 
    [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
@@ -257,7 +257,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
     Annotation: The Threshold Voltage (Vt) is extracted by finding the Vgs point at which the current starts to rise significantly (or by linear extrapolation from the saturation region).
 
    
-    ##Experiment 3: VTC (Voltage Transfer Characteristic)
+    ## Experiment 3: VTC (Voltage Transfer Characteristic)
     The VTC plots the output voltage Vout vs. input voltage Vin.
 
    [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
@@ -267,7 +267,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
     Noise Margin Points: The points VIL (Maximum low input) and VIH (Minimum high input) define the region of safe low and high logic inputs.
 
 
-    ##Experiment 4: Transient Waveforms
+    ## Experiment 4: Transient Waveforms
    
     The plot shows the input pulse (blue) and the resulting output transient (red).
 
@@ -276,7 +276,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
     Annotation: Propagation delays are measured between the input and output Vdd/2 crossing points.
 
    
-    ##Experiment 5: VTC under Vdd Variation
+    ## Experiment 5: VTC under Vdd Variation
    
     The plot shows VTC curves for different supply voltages Vdd.
 
@@ -423,6 +423,7 @@ Effect of $V_{DD}$ Variation on Gain
 | $1.4$ | $8.62$ |
 | $1.2$ | $9.48$ |
 | $1.0$ | $8.5$ |
+
 
 
 
