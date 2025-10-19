@@ -25,25 +25,25 @@ This report documents the characterization of a CMOS inverter using a SPICE simu
    1. Resistive Load NMOS DC Analysis
 This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up, often used for introductory characterization or simple logic gates.
 
-        * Title: Resistive Load NMOS DC Analysis (W=0.39u, L=0.15u)
+          Title: Resistive Load NMOS DC Analysis (W=0.39u, L=0.15u)
 
-            * Model Description
+          Model Description
             .param temp=27
             
-            * Including sky130 library files
+            Including sky130 library files
             .lib "sky130_fd_pr/models/sky130.lib.spice" tt
             
-            * Netlist Description
-            * M1: Drain=Vdd, Gate=n1, Source=0, Bulk=0
+            Netlist Description
+            M1: Drain=Vdd, Gate=n1, Source=0, Bulk=0
             XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39u l=0.15u
             
             R1 n1 in 55
             
             Vdd vdd 0 1.8V
-            * The input voltage 'in' is fixed for this .op, but the sweep below is active
+            The input voltage 'in' is fixed for this .op, but the sweep below is active
             Vin in 0 1.8V
             
-            * Simulation Commands
+            Simulation Commands
             .op
             .dc Vin 0 1.8 0.1
             
@@ -54,3 +54,4 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
             
             .end
             
+
