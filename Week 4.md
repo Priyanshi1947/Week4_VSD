@@ -249,7 +249,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 ## Experiment 1:
     The plot shows drain current Id vs. drain-source voltage Vds for multiple gate-source voltages Vgs.
 
-    ![]((https://github.com/Priyanshi1947/Week4_VSD/blob/main/image.png?raw=true))
+   ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image.png?raw=true)
     
     Observation: For a fixed Vgs, the current initially increases linearly with Vds (Linear Region) before flattening out (Saturation Region).
     Significance: The saturation region is where the transistor acts as a current source, and the linear region is where it acts as a resistor. The onset of saturation is near the knee of each curve.
@@ -288,9 +288,9 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
    
     The plot shows VTC curves for different supply voltages Vdd.
 
-   
+   [
     ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(4).png?raw=true)
-  
+
    
     Observation: As Vdd scales down, the VTC curve shifts to the left Vin and the overall voltage swing decreases.
 
@@ -315,22 +315,31 @@ STA connection: The saturation current determines the maximum drive strength IDs
 Threshold Voltage Extraction
 
 The current begins to rise significantly only after Vgs exceeds approximately 0.5V.
+
 Vt is the gate-source voltage required to create an inversion layer (channel) of mobile carriers necessary for conduction between the source and drain.
+
 STA connection: Vt determines the delay sensitivity to Vgs and Vdd. A lower Vt increases leakage but generally lowers propagation delay by allowing the transistor to turn ON sooner.
 
 CMOS Inverter VTC and Noise Margins
 
 The rise time is approximately twice the fall time. Also, NMH is slightly larger than NML.
+
 In a standard CMOS inverter, the PMOS transistor is typically wider than the NMOS transistor to compensate for the naturally lower mobility of holes (PMOS carriers) compared to electrons (NMOS carriers). However, the results here suggest the PMOS is stronger than the NMOS. This means the output discharges slower than it charges.
+
 STA connection: Propagation delay is directly measured as the time taken to charge or discharge the output capacitance. The difference in rise and fall times is a direct measure of the asymmetry in drive strength between the pull-up and pull-down networks.
 
 Variation Studies
 
 The VTC shifts as Vdd changes. The DC gain initially increases as Vdd is lowered (1.8 to 1.2 V), but falls drastically at low voltages (1 V).
+
 Vm is determined by the ratio of NMOS to PMOS currents, both of which are functions of Vdd. At very low , the supply voltage is not high enough to adequately drive the transistors, causing the current (and therefore the gain) to drop. Low voltage operation also results in high rise and fall times, and the device may not even operate correctly.
-STA connection: $V_{DD}$ variation affects delay and noise margins. Lower $V_{DD}$ reduces power but increases delay ($\tau \propto C_L/I$) and decreases noise margins, which can lead to timing failures or unreliable operation.
-Device variations due to manufacturing processes (like etching variations) cause the VTC to shift, changing Vm and the noise margins .
+
+STA connection: Vdd variation affects delay and noise margins. Lower Vdd reduces power but increases delay and decreases noise margins, which can lead to timing failures or unreliable operation.
+
+Device variations due to manufacturing processes (like etching variations) cause the VTC to shift, changing Vm and the noise margins.
+
 Process variations alter Vt and the effective W/L ratio. For instance, a stronger PMOS shifts the VTC to the left, resulting in a change in Vm.
+
 
 
 
