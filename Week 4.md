@@ -289,7 +289,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
     The plot shows VTC curves for different supply voltages Vdd.
 
    [
-    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(4).png?raw=true)
+    ![](https://github.com/Priyanshi1947/Week4_VSD/blob/main/image%20(5).png?raw=true)
 
    
     Observation: As Vdd scales down, the VTC curve shifts to the left Vin and the overall voltage swing decreases.
@@ -339,6 +339,7 @@ STA connection: Vdd variation affects delay and noise margins. Lower Vdd reduces
 Device variations due to manufacturing processes (like etching variations) cause the VTC to shift, changing Vm and the noise margins.
 
 Process variations alter Vt and the effective W/L ratio. For instance, a stronger PMOS shifts the VTC to the left, resulting in a change in Vm.
+
 
 
 
