@@ -22,7 +22,7 @@ This report documents the characterization of a CMOS inverter using a SPICE simu
 
 2. **Spice Netlist**
 
-   1. Resistive Load NMOS DC Analysis
+   1.Resistive Load NMOS DC Analysis
       
 This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up, often used for introductory characterization or simple logic gates.
 
@@ -87,7 +87,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
             
             .end
 
-    3. Inverter VTC Nominal Sizing
+ 3. Inverter VTC Nominal Sizing
     
     This netlist determines the Voltage Transfer Characteristic (VTC) for the nominal $1.8\text{V}$ CMOS inverter.
 
@@ -119,7 +119,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
             
             .end
 
-    4. Inverter VTC Variation (Stronger PMOS)
+ 4. Inverter VTC Variation (Stronger PMOS)
     
     This netlist simulates the VTC with a slightly stronger PMOS ($W_P=1\mu$ vs $0.84\mu$ nominal) to observe the effect of device variation on the switching threshold ($V_M$).
 
@@ -154,7 +154,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
             .end
 
 
-    5. Inverter VTC Variation (High Ratio)
+ 5. Inverter VTC Variation (High Ratio)
     
     This netlist uses a large PMOS to NMOS ratio, demonstrating a highly skewed inverter design.
 
@@ -237,5 +237,6 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
         
         .end
         
+
 
 
