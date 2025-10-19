@@ -1,4 +1,4 @@
-<img width="505" height="482" alt="image" src="https://github.com/user-attachments/assets/130ebb70-ab95-4147-8bf9-4679e258103e" />## sky130 CMOS Inverter Characterization Report 
+## sky130 CMOS Inverter Characterization Report 
 
 This report documents the characterization of a CMOS inverter using a SPICE simulator(ngspice), following the structure and experiments typical of the sky130 circuit design workflow. The analysis covers the static and transient behavior of the MOSFETs and the resulting inverter circuit.
 
@@ -249,7 +249,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 ## Experiment 1:
     The plot shows drain current Id vs. drain-source voltage Vds for multiple gate-source voltages Vgs.
 
-  ![]((https://github.com/Priyanshi1947/Week4_VSD/blob/main/image.png?raw=true))
+    ![]((https://github.com/Priyanshi1947/Week4_VSD/blob/main/image.png?raw=true))
     
     Observation: For a fixed Vgs, the current initially increases linearly with Vds (Linear Region) before flattening out (Saturation Region).
     Significance: The saturation region is where the transistor acts as a current source, and the linear region is where it acts as a resistor. The onset of saturation is near the knee of each curve.
@@ -331,6 +331,7 @@ Vm is determined by the ratio of NMOS to PMOS currents, both of which are functi
 STA connection: $V_{DD}$ variation affects delay and noise margins. Lower $V_{DD}$ reduces power but increases delay ($\tau \propto C_L/I$) and decreases noise margins, which can lead to timing failures or unreliable operation.
 Device variations due to manufacturing processes (like etching variations) cause the VTC to shift, changing Vm and the noise margins .
 Process variations alter Vt and the effective W/L ratio. For instance, a stronger PMOS shifts the VTC to the left, resulting in a change in Vm.
+
 
 
 
