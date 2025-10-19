@@ -240,7 +240,7 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
 3. **Plots and Figures**
 
    
-    ## Experiment 1:
+## Experiment 1:
     The plot shows drain current Id vs. drain-source voltage Vds for multiple gate-source voltages Vgs.
 
   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
@@ -249,181 +249,40 @@ This netlist simulates a single NMOS transistor with a 55 Ohm resistive pull-up,
     Significance: The saturation region is where the transistor acts as a current source, and the linear region is where it acts as a resistor. The onset of saturation is near the knee of each curve.
 
    
-    ## Experiment 2: 
+## Experiment 2: 
     The plot shows drain current Id vs. gate-source voltage Vgs at a fixed high Vds .
 
-   [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
    
     Annotation: The Threshold Voltage (Vt) is extracted by finding the Vgs point at which the current starts to rise significantly (or by linear extrapolation from the saturation region).
 
    
-    ## Experiment 3: VTC (Voltage Transfer Characteristic)
+## Experiment 3: VTC (Voltage Transfer Characteristic)
     The VTC plots the output voltage Vout vs. input voltage Vin.
 
-   [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
    
     Annotation: The sharp transition demonstrates high gain. The Switching Threshold Vm is the point where Vin=Vout. Vm is observed to be around 0.9V for the given design.
 
     Noise Margin Points: The points VIL (Maximum low input) and VIH (Minimum high input) define the region of safe low and high logic inputs.
 
 
-    ## Experiment 4: Transient Waveforms
+## Experiment 4: Transient Waveforms
    
     The plot shows the input pulse (blue) and the resulting output transient (red).
 
-   [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
    
     Annotation: Propagation delays are measured between the input and output Vdd/2 crossing points.
 
    
-    ## Experiment 5: VTC under Vdd Variation
+## Experiment 5: VTC under Vdd Variation
    
     The plot shows VTC curves for different supply voltages Vdd.
 
-   [](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
+   ![](https://github.com/Priyanshi1947/Week-2---VLSI-System-Design/blob/main/image1.jpeg)
    
     Observation: As Vdd scales down, the VTC curve shifts to the left Vin and the overall voltage swing decreases.
 
    
         
-Extracted Inverter Characterization Results
-
-This document summarizes the key DC and transient parameters extracted from the SPICE simulations of the sky130 CMOS inverter at nominal $V_{DD} = 1.8\text{V}$ and under $V_{DD}$ variation.
-
-Extracted Parameters (Nominal $V_{DD}=1.8\text{V}$)
-
-Parameter
-
-Value
-
-Unit
-
-Method/Condition
-
-NMOS Threshold Voltage ($V_t$)
-
-$\approx 0.5$
-
-V
-
-Linear extrapolation on $I_D$ vs. $V_{GS}$
-
-Switching Threshold ($V_M$)
-
-$\approx 0.9$
-
-V
-
-VTC crossing ($V_{IN} = V_{OUT}$)
-
-High Output Voltage ($V_{OH}$)
-
-$1.70882$
-
-V
-
-VTC, $V_{IN} = V_{OL}$
-
-Low Output Voltage ($V_{OL}$)
-
-$0.114706$
-
-V
-
-VTC, $V_{IN} = V_{OH}$
-
-$V_{IL}$ (Input Low)
-
-$0.774138$
-
-V
-
-VTC, $d V_{OUT}/d V_{IN} = -1$
-
-$V_{IH}$ (Input High)
-
-$0.975862$
-
-V
-
-VTC, $d V_{OUT}/d V_{IN} = -1$
-
-Propagation Delays
-
-Delays are extracted from the transient plot at the $V_{DD}/2 = 1.8\text{V}/2 = 0.9\text{V}$ crossing.
-
-Calculations
-
-Input $L \rightarrow H$ and Output $H \rightarrow L$ ($t_{pHL}$):
-
-
-$$t_{pHL} = t_{out, 0.9\text{V}} (H \rightarrow L) - t_{in, 0.9\text{V}} (L \rightarrow H)$$
-
-$$t_{pHL} \approx 2.5\text{ns} - 2.1\text{ns} = \mathbf{0.4\text{ns}}$$
-
-Input $H \rightarrow L$ and Output $L \rightarrow H$ ($t_{pLH}$):
-
-
-$$t_{pLH} = t_{out, 0.9\text{V}} (L \rightarrow H) - t_{in, 0.9\text{V}} (H \rightarrow L)$$
-
-$$t_{pLH} \approx 4.2\text{ns} - 4.0\text{ns} = \mathbf{0.2\text{ns}}$$
-
-Summary Table
-
-Parameter
-
-Formula
-
-Value (ns)
-
-Rise Prop. Delay ($t_{pLH}$)
-
-$t_{out, 50\%} (L \rightarrow H) - t_{in, 50\%} (H \rightarrow L)$
-
-$\mathbf{0.2}$
-
-Fall Prop. Delay ($t_{pHL}$)
-
-$t_{out, 50\%} (H \rightarrow L) - t_{in, 50\%} (L \rightarrow H)$
-
-$\mathbf{0.4}$
-
-Average Delay ($t_{pd}$)
-
-$(t_{pLH} + t_{pHL})/2$
-
-$\mathbf{0.3}$
-
-Noise Margins
-
-Parameter
-
-Formula
-
-Value (V)
-
-Noise Margin Low ($NM_L$)
-
-$V_{IL} - V_{OL}$
-
-$0.774138 - 0.114706 = \mathbf{0.6594}$
-
-Noise Margin High ($NM_H$)
-
-$V_{OH} - V_{IH}$
-
-$1.70882 - 0.975862 = \mathbf{0.7330}$
-
-Effect of $V_{DD}$ Variation on Gain
-
-| Voltage $V_{DD}$ (V) | Gain $|dV_{OUT}/dV_{IN}|_{\text{max}}$ |
-| :--- | :--- |
-| $1.8$ | $7.4$ |
-| $1.6$ | $6.03$ |
-| $1.4$ | $8.62$ |
-| $1.2$ | $9.48$ |
-| $1.0$ | $8.5$ |
-
-
-
-
